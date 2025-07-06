@@ -1,8 +1,8 @@
-export const maxDuration = 60;
+import { revalidateTag } from "next/cache";
+import { NextResponse } from "next/server";
 
-import { NextRequest, NextResponse } from "next/server";
-
-export async function POST(req: NextRequest) {
+export async function POST() {
   console.log("Webhook received");
+  revalidateTag("posts");
   return NextResponse.json({ message: "Webhook received" });
 }
