@@ -33,6 +33,7 @@ export async function POST(request: NextRequest) {
     console.log("- Revision:", payload.sys.revision);
     console.log("- Updated At:", payload.sys.updatedAt);
     console.log("- Webhook Type:", payload.sys.type);
+    console.log("- Payload:", payload);
     
     // Optional: Verify webhook signature (uncomment if you set up webhook signatures)
     // const signature = request.headers.get('x-contentful-signature');
